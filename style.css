@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('jsss.gif') no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
+}
+.container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foreground {
+    width: 350px; /* Adjust as needed */
+    mix-blend-mode: screen; /* Blends it smoothly with the background */
+}
+
+.main .image-container .image{
+    font-family: sans-serif;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .image-container .image img {
+    width: 350px;
+    align-items: center;
+}
+.main .image-container p {
+    font-family: "Orbitron", sans-serif; /* More robotic font */
+    font-size: 22px;
+    font-weight: bold;
+    color: #00ffcc; /* Neon cyan */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 
+        0 0 5px #00ffcc, 
+        0 0 10px #00ccff, 
+        0 0 20px #0099ff;
+    animation: jarvisFlicker 1.5s infinite alternate;
+}
+
+/* Glowing Flicker Effect */
+@keyframes jarvisFlicker {
+    0% {
+        text-shadow: 
+            0 0 5px #00ffcc, 
+            0 0 15px #00ccff, 
+            0 0 30px #0099ff;
+    }
+    100% {
+        text-shadow: 
+            0 0 10px #00ccff, 
+            0 0 20px #0099ff, 
+            0 0 40px #0066ff;
+    }
+}
+
+.main .image-container h1 {
+    color: #aa0505; /* Deep red Iron Man theme */
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 50px;
+    font-weight: 700;
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 
+        0 0 10px #ff1e1e, 
+        0 0 20px #ff3b3b, 
+        0 0 40px #ff5656;
+    animation: jarvisFlicker 1.5s infinite alternate;
+}
+
+/* JARVIS Flicker Effect */
+@keyframes jarvisFlicker {
+    0% {
+        text-shadow: 
+            0 0 5px #ff1e1e, 
+            0 0 15px #ff3b3b, 
+            0 0 30px #ff5656;
+    }
+    50% {
+        text-shadow: 
+            0 0 10px #050404, 
+            0 0 25px #100c0c, 
+            0 0 50px #100707;
+    }
+    100% {
+        text-shadow: 
+            0 0 5px #020101, 
+            0 0 10px #943838, 
+            0 0 20px #000000;
+    }
+}
+
+.main .image-container p {
+    color: #fbca03;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main .input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 50px;
+    border-radius: 20px;
+    background: rgba(94, 221, 228, 0.5);
+}
+
+.main .input .talk {
+    background: transparent;
+    outline: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.main .input .talk i {
+    font-size: 20px;
+    color: #000000;
+}
+
+.main .input .content {
+    color: #000000;
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+/* 🔹 Media Queries for Responsiveness 🔹 */
+@media screen and (max-width: 768px) {
+    .foreground {
+        width: 280px; /* Reduce size for tablets */
+    }
+
+    .main .image-container .image img {
+        width: 280px;
+    }
+
+    .main .image-container h1 {
+        font-size: 32px;
+    }
+
+    .main .image-container p {
+        font-size: 16px;
+    }
+
+    .main .input {
+        width: 60vw;
+        height: 45px;
+        border-radius: 18px;
+    }
+
+    .main .input .talk {
+        width: 45px;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .main .input .talk i {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .foreground {
+        width: 220px; /* Reduce image size for mobile */
+    }
+
+    .main .image-container .image img {
+        width: 220px;
+    }
+
+    .main .image-container h1 {
+        font-size: 24px; /* Smaller heading on small screens */
+    }
+
+    .main .image-container p {
+        font-size: 14px;
+    }
+
+    .main .input {
+        width: 80vw; /* Increase input width for better touch experience */
+        height: 40px;
+        border-radius: 15px;
+    }
+
+    .main .input .talk {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .main .input .talk i {
+        font-size: 16px;
+    }
+}
+/* JARVIS Video Styling */
+.jarvis-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain; /* Ensures full visibility without cropping */
+    background: black; /* Prevents gaps around video */
+    z-index: 1000;
+    display: none;
+}
+
+/* Ensures it works well on mobile too */
+@media screen and (max-width: 768px) {
+    .jarvis-video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: contain; /* Prevents cropping */
+    }
+}
+.container {
+    font-family: "Rajdhani", sans-serif; /* Futuristic robotic font */
+    font-size: 12px; /* Slightly larger for readability */
+    font-weight: bold;
+    color: #00ffcc; /* Neon cyan */
+    text-transform: uppercase;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 12px;  /* Adjusted padding */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    
+    width: 90%; /* Default width for larger screens */
+    max-width: 600px; /* Ensures it doesn't get too wide */
+    min-height: 60px; /* Comfortable height */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0 auto 60px auto; /* This centers it horizontally */
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 85%;  /* More space on mobile */
+        min-height: 70px; /* Slightly increased height for better spacing */
+        font-size: 12px; /* Adjust font size for small screens */
+    }
+}
+
+
+/* Fixed Microphone Button Position */
+.talk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(75, 237, 255, 0.9) 0%, rgba(24, 8, 131, 0.7) 70%);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 10px #08fcc3cc, 
+        0 0 20px rgba(23, 141, 167, 0.6), 
+        0 0 30px rgba(19, 9, 193, 0.4);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    animation: pulseGlow 1.5s infinite alternate;
+    
+    /* Positioning Below Container */
+    position: relative;
+    margin: auto;
+    z-index: 2; /* Ensure button is above container */
+}
+
+/* Icon inside the button */
+.talk i {
+    font-size: 28px;
+    color: #fff;
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.9), 
+        0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Glowing Animation */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(9, 251, 218, 0.522), 0 0 20px rgba(9, 177, 233, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgb(15, 255, 207), 0 0 30px rgba(9, 251, 203, 0.8);
+    }
+}
+
+/* Responsive for Mobile */
+@media screen and (max-width: 768px) {
+    .talk {
+        width: 70px;
+        height: 70px;
+    }
+
+    .talk i {
+        font-size: 24px;
+    }
+}
+
+.talk img.bot-gif {
+    width: 80px; /* Adjust the width */
+    height: 80px; /* Adjust the height */
+    object-fit: contain; /* Ensures the image fits inside without being cut */
+    border-radius: 50%; /* Makes it round if needed */
+}
+
+.magic-words {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 10px cyan;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Magic Words Button */
+.toggle-btn {
+    background: cyan;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Hidden List by Default */
+.word-list {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    font-family: 'Teko', sans-serif;
+}
+
+/* Styling List Items */
+.word-list li {
+    padding: 5px 0;
+    font-size: 14px;
+    text-align: left;
+}
+
+/* 📱 Responsive Design for Phones */
+@media screen and (max-width: 768px) {
+    .magic-words {
+        width: 90%; /* Adjusts width for smaller screens */
+        right: 5%;
+        bottom: 10px;
+        padding: 8px;
+    }
+
+    .toggle-btn {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .word-list li {
+        font-size: 13px;
+        padding: 3px 0;
+        font-family: 'Teko', sans-serif;
+    }
+}
