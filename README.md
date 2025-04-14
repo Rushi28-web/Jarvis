@@ -30,3 +30,5 @@ Here are some magical words that you can use to interact with J.A.R.V.I.S.:
 "Open calculator" → Opens an online calculator.
 "Battery" → Checks and tells the battery level.
 "Weather" → Opens the weather website.
+
+demo:-https://rushi28-web.github.io/Jarvis/
